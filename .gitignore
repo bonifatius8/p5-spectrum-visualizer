@@ -1,0 +1,6 @@
+node_modules
+.DS_Store
+dist
+.env
+alphabet_to_hiragana.js
+public/*.mp4
