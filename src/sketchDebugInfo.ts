@@ -3,8 +3,7 @@
 // これにより、メインのスケッチファイルが簡潔になり、情報表示の管理が容易になります。
 
 import * as p5 from "p5";
-import { ConcentricCirclesResult } from "./concentricCircles"; // ConcentricCirclesResult型をインポート
-import { SpectrumAnalyzerData } from "./spectrumAnalyzer"; // SpectrumAnalyzerData型をインポート
+import { ConcentricCirclesResult } from "./concentricCircles";
 
 /**
  * デバッグ情報をP5.jsのグラフィックバッファに描画します。
@@ -35,14 +34,14 @@ export const drawDebugInfo = (
         textBuffer.textSize(24); // フォントサイズを大きくする
         textBuffer.text("ERROR: Microphone Access Denied!", 10, 20);
         textBuffer.textSize(16); // 元のサイズに戻す
-        textBuffer.fill(255); // 白いテキスト色
+        textBuffer.fill(0, 0, 100); // 白
         textBuffer.text(
             "Please allow microphone access to start audio processing.",
             10,
             50
         );
     } else {
-        textBuffer.fill(255); // 白いテキスト色
+        textBuffer.fill(0, 0, 100); // 白
         textBuffer.text(`Microphone: ${microphoneName}`, 10, 20);
         textBuffer.text(
             `Volume: ${volume.toFixed(2)} / Max: ${maxVolume.toFixed(2)} `,
@@ -98,7 +97,7 @@ export const drawDebugInfo = (
             } else if (data.amplitudeChange < 0) {
                 textBuffer.fill(30, 100, 100); // 赤色（減少）
             } else {
-                textBuffer.fill(255); // 白（変化なし）
+                textBuffer.fill(0, 0, 100); // 白（変化なし）
             }
 
             textBuffer.text(p.nf(i, 2), currentX, currentDataY); // インデックスを表示

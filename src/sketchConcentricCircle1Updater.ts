@@ -5,23 +5,7 @@
 import * as p5 from "p5";
 import { Config } from "./sketchConfig";
 import { DirectionalTranslationResult } from "./directionalTranslation";
-import { ConcentricCircleState } from "./sketchState"; // ConcentricCircleStateをsketchStateからインポート
-
-/**
- * 角度の線形補間を行います。
- * 角度が2πを超える場合に適切に処理し、最短経路で補間します。
- * @param p p5インスタンス
- * @param a 開始角度
- * @param b 終了角度
- * @param t 補間係数 (0.0から1.0)
- * @returns 補間された角度
- */
-const lerpAngle = (p: p5, a: number, b: number, t: number): number => {
-    let diff = b - a;
-    if (diff > p.PI) diff -= p.TWO_PI;
-    if (diff < -p.PI) diff += p.TWO_PI;
-    return a + diff * t;
-};
+import { ConcentricCircleState } from "./sketchState";
 
 /**
  * 物理シミュレーションに基づいてオブジェクトの位置、速度、または角度を更新します。
