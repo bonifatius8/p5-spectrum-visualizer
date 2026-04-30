@@ -1,5 +1,5 @@
 // A特性の周波数ごとの重み付け（dB）
-const aWeighting: { [frequency: string]: number } = {
+const aWeighting: Record<string, number> = {
     "20": -50.5,
     "25": -44.7,
     "31.5": -39.4,
@@ -52,7 +52,7 @@ export const applyAWeighting = (
     });
 
     // A特性の重み付けを適用
-    const weight = aWeighting[Number(closestFrequency)];
+    const weight = aWeighting[closestFrequency];
     const weightedAmplitude = amplitude * Math.pow(10, weight / 20); // dBから振幅スケールに変換
 
     return weightedAmplitude;

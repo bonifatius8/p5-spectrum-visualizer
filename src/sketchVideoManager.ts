@@ -73,7 +73,7 @@ export class VideoManager {
 
             this.currentVideoElement = vid;
             return vid;
-        } catch (error) {
+        } catch (error: unknown) {
             console.error(
                 `ビデオ '${path}' のロード中にエラーが発生しました:`,
                 error

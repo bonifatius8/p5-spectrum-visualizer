@@ -6,7 +6,8 @@ import * as p5 from "p5";
 import {
     ConcentricCirclesResult,
     concentricCircles,
-} from "./concentricCircles"; // concentricCircles関数も必要に応じてインポート
+} from "./concentricCircles";
+import { SpectrumAnalyzerData, SpectrumAnalyzer } from "./spectrumAnalyzerClass";
 
 /**
  * 同心円をP5.jsのメインキャンバスに描画します。
@@ -23,8 +24,8 @@ export const drawConcentricCircles = (
     p: p5,
     graphicsBuffer3: p5.Graphics,
     volume: number,
-    spectrumAnalyzerData: any, // SpectrumAnalyzerData型を適切に定義してください
-    spectrumAnalyzer: any, // SpectrumAnalyzer型を適切に定義してください
+    spectrumAnalyzerData: SpectrumAnalyzerData | null,
+    spectrumAnalyzer: SpectrumAnalyzer | null,
     concentric1ActualX: number,
     concentric1ActualY: number,
     concentric1ActualZ: number,

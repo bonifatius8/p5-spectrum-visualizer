@@ -5,7 +5,7 @@ interface FrequencyData {
     nextResetTime: number; // 新しく追加
 }
 
-const frequencyDataStore: { [frequency: string]: FrequencyData } = {};
+const frequencyDataStore: Record<string, FrequencyData> = {};
 
 /**
  * 次回のリセット時刻を計算する関数
@@ -31,7 +31,7 @@ export const addSample = (
     amplitude: number,
     samplingInterval: number,
     movingAverageDuration: number
-) => {
+): void => {
     const frequencyString = frequency.toString();
 
     // 周波数帯のデータが存在しない場合は作成し、初回リセット時刻を設定

@@ -4,17 +4,21 @@ export interface SpectrumAnalyzerData {
     frequencies: Uint8Array;
 }
 
+interface WindowWithWebkitAudio extends Window {
+    webkitAudioContext?: typeof AudioContext;
+}
+
 export class SpectrumAnalyzer {
-    audioContext: AudioContext;
-    analyser: AnalyserNode;
-    source?: MediaStreamAudioSourceNode;
-    freqData: Uint8Array;
-    bands: number;
+    public audioContext: AudioContext;
+    public analyser: AnalyserNode;
+    public source?: MediaStreamAudioSourceNode;
+    private freqData: Uint8Array;
+    private bands: number;
 
     constructor(bands: number) {
         this.bands = bands;
-        this.audioContext = new (window.AudioContext ||
-            (window as any).webkitAudioContext)();
+        const win = window as WindowWithWebkitAudio;
+        this.audioContext = new (win.AudioContext ?? win.webkitAudioContext!)();
         this.analyser = this.audioContext.createAnalyser();
         this.analyser.fftSize = this.bands * 2;
         this.freqData = new Uint8Array(this.analyser.frequencyBinCount);
@@ -27,9 +31,9 @@ export class SpectrumAnalyzer {
             });
             this.source = this.audioContext.createMediaStreamSource(stream);
             this.source.connect(this.analyser);
-        } catch (err) {
+        } catch (err: unknown) {
             console.error("マイクアクセスエラー:", err);
-            throw err; // エラーを再スローして、呼び出し元で処理できるようにする
+            throw err;
         }
     }
 

@@ -4,3 +4,12 @@ dist
 .env
 alphabet_to_hiragana.js
 public/*.mp4
+
+# Claude Code
+.claude/
+
+# Playwright MCP
+.playwright-mcp/
+
+# スクリーンショット
+screenshot-*.png

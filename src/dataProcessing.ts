@@ -1,6 +1,6 @@
-const dataProcessing = (bands: number) => {
+const dataProcessing = (bands: number): { processData: (data: number[]) => number[] } => {
     return {
-        processData: (data: number[]) => {
+        processData: (data: number[]): number[] => {
             // データ処理のロジックをここに実装します
             // - スペクトラムデータの平滑化
             // - 正規化

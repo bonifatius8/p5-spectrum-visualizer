@@ -4,16 +4,16 @@ export const dataHolder = (() => {
     let fftData: Uint8Array | null = null;
 
     return {
-        setAudioContext: (context: AudioContext) => {
+        setAudioContext: (context: AudioContext): void => {
             audioContext = context;
         },
-        getAudioContext: () => {
+        getAudioContext: (): AudioContext | null => {
             return audioContext;
         },
-        setFftData: (data: Uint8Array) => {
+        setFftData: (data: Uint8Array): void => {
             fftData = data;
         },
-        getFftData: () => {
+        getFftData: (): Uint8Array | null => {
             return fftData;
         },
     };
