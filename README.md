@@ -1,4 +1,16 @@
-# Vite + TypeScript 音声可視化プロジェクト
+# p5-spectrum-visualizer
+
+マイク入力をリアルタイム FFT 解析し、周波数スペクトラムをグラフィックで可視化するウェブアプリ。
+
+**デモ:** [https://bonifatius8.github.io/p5-spectrum-visualizer/](https://bonifatius8.github.io/p5-spectrum-visualizer/)
+
+## 使い方
+
+1. 画面をクリック → 初回はブラウザがマイク入力の許可を求める
+2. 許可後、マイクからの音声を FFT 解析し描画開始
+3. 周波数成分・音量に応じてグラフィックがリアルタイム変化
+
+---
 
 ## プロジェクト概要
 
