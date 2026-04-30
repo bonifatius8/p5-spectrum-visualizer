@@ -88,4 +88,4 @@ export const Config = {
         DAMPING_FACTOR_MAX: 0.95, // 追従速度が速い場合の減衰係数
     },
     // その他の設定項目があれば追加
-};
+} as const;

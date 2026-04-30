@@ -6,10 +6,10 @@ export class BackgroundFadeLayer implements VisualLayer {
     readonly name = "background-fade";
     enabled = true;
 
-    setup(_p: p5) {}
-    resize(_p: p5) {}
+    setup(_p: p5): void {}
+    resize(_p: p5): void {}
 
-    draw(p: p5, _audio: AudioData) {
+    draw(p: p5, _audio: AudioData): void {
         p.blendMode(p.MULTIPLY);
         p.fill(0, 10);
         p.rect(-p.width / 2, -p.height / 2, p.width, p.height);

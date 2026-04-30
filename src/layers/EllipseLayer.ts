@@ -11,17 +11,17 @@ export class EllipseLayer implements VisualLayer {
     private buffer!: p5.Graphics;
     private ellipseStates: EllipseState[] = [];
 
-    setup(p: p5) {
+    setup(p: p5): void {
         this.buffer = p.createGraphics(p.width, p.height, p.P2D);
         this.buffer.colorMode(p.HSB, 360, 100, 100, 255);
     }
 
-    resize(p: p5) {
+    resize(p: p5): void {
         this.buffer = p.createGraphics(p.width, p.height, p.P2D);
         this.buffer.colorMode(p.HSB, 360, 100, 100, 255);
     }
 
-    private initStates(p: p5, audio: AudioData) {
+    private initStates(p: p5, audio: AudioData): void {
         if (!audio.analyser) return;
         this.ellipseStates = [];
         for (let i = 0; i < Config.ELLIPSE.NUM_ELLIPSES; i++) {
@@ -42,7 +42,7 @@ export class EllipseLayer implements VisualLayer {
         }
     }
 
-    draw(p: p5, audio: AudioData) {
+    draw(p: p5, audio: AudioData): void {
         if (!audio.frequencies || !audio.analyser || !audio.audioContext) return;
 
         if (this.ellipseStates.length === 0) this.initStates(p, audio);

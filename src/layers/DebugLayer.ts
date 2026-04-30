@@ -15,17 +15,17 @@ export class DebugLayer implements VisualLayer {
         this.getConcentricResult = getConcentricResult;
     }
 
-    setup(p: p5) {
+    setup(p: p5): void {
         this.buffer = p.createGraphics(p.width, p.height, p.P2D);
         this.buffer.colorMode(p.HSB, 360, 100, 100, 255);
     }
 
-    resize(p: p5) {
+    resize(p: p5): void {
         this.buffer = p.createGraphics(p.width, p.height, p.P2D);
         this.buffer.colorMode(p.HSB, 360, 100, 100, 255);
     }
 
-    draw(p: p5, audio: AudioData) {
+    draw(p: p5, audio: AudioData): void {
         drawDebugInfo(
             p,
             this.buffer,

@@ -18,14 +18,14 @@ export class VideoLayer implements VisualLayer {
         this.videoPaths = videoPaths;
     }
 
-    setup(p: p5) {
+    setup(p: p5): void {
         this.videoManager = new VideoManager(p, this.videoPaths);
         this.videoManager.initializeAndPlay();
     }
 
-    resize(_p: p5) {}
+    resize(_p: p5): void {}
 
-    draw(p: p5, audio: AudioData) {
+    draw(p: p5, audio: AudioData): void {
         const vid = this.videoManager.getVideoElement();
         if (!vid || (vid as P5MediaElementWithElt).elt.readyState < (vid as P5MediaElementWithElt).elt.HAVE_CURRENT_DATA) return;
 

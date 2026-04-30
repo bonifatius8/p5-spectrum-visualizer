@@ -23,18 +23,18 @@ export class ConcentricCirclesLayer implements VisualLayer {
     private c1State!: ConcentricCircleState;
     private c2Transform!: Transform3D;
 
-    setup(p: p5) {
+    setup(p: p5): void {
         this.buffer = p.createGraphics(p.width, p.height, p.P2D);
         this.buffer.colorMode(p.HSB, 360, 100, 100, 255);
         this.initTransforms(p);
     }
 
-    resize(p: p5) {
+    resize(p: p5): void {
         this.buffer = p.createGraphics(p.width, p.height, p.P2D);
         this.buffer.colorMode(p.HSB, 360, 100, 100, 255);
     }
 
-    private initTransforms(p: p5) {
+    private initTransforms(p: p5): void {
         const c1 = calculateDirectionalTranslation(
             p, 0, 0, 0,
             Config.CONCENTRIC_CIRCLES.C1_ROTATION_FACTOR_X,
@@ -69,13 +69,13 @@ export class ConcentricCirclesLayer implements VisualLayer {
         };
     }
 
-    draw(p: p5, audio: AudioData) {
+    draw(p: p5, audio: AudioData): void {
         this.updateTransforms(p, audio);
         this.renderBuffer(p, audio);
         this.drawPlanes(p, audio);
     }
 
-    private updateTransforms(p: p5, audio: AudioData) {
+    private updateTransforms(p: p5, audio: AudioData): void {
         const { volume, maxVolume } = audio;
 
         const c2Target = calculateDirectionalTranslation(
@@ -127,7 +127,7 @@ export class ConcentricCirclesLayer implements VisualLayer {
         );
     }
 
-    private renderBuffer(p: p5, audio: AudioData) {
+    private renderBuffer(p: p5, audio: AudioData): void {
         this.buffer.push();
         this.buffer.clear();
         if (audio.frequencies && audio.audioContext) {
@@ -143,7 +143,7 @@ export class ConcentricCirclesLayer implements VisualLayer {
         this.buffer.pop();
     }
 
-    private drawPlanes(p: p5, _audio: AudioData) {
+    private drawPlanes(p: p5, _audio: AudioData): void {
         const c1 = this.c1State;
         p.push();
         p.translate(c1.x, c1.y, c1.z);

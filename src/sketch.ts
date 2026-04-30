@@ -75,7 +75,7 @@ export const sketch = (p: p5) => {
             if (layer.enabled) {
                 try {
                     layer.draw(p, audio);
-                } catch (e) {
+                } catch (e: unknown) {
                     console.error(`[${layer.name}] draw error (layer disabled):`, e);
                     layer.enabled = false;
                 }
