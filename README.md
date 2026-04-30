@@ -1,6 +1,8 @@
 # p5-spectrum-visualizer
 
-マイク入力をリアルタイム FFT 解析し、周波数スペクトラムをグラフィックで可視化するウェブアプリ。
+p5.js v2（WEBGL）+ TypeScript + Vite によるリアルタイム・オーディオビジュアライザ。
+
+`VisualLayer` インターフェースによる疎結合レイヤー構成・毎フレーム `AudioData` スナップショットによるオーディオ分離・P2D オフスクリーンバッファと WEBGL コンポジットを組み合わせたグラフィック描画パターンをフルスクラッチで実装したプロジェクトです。ライブコーディング用途を想定した拡張しやすい構成を示すポートフォリオとして公開しています。
 
 **デモ:** [https://bonifatius8.github.io/p5-spectrum-visualizer/](https://bonifatius8.github.io/p5-spectrum-visualizer/)
 
