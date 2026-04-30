@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="240" style="background:#0d0d1a;border-radius:8px">
+<style>text{font-family:ui-monospace,monospace,sans-serif}</style>
+<defs>
+  <marker id="ar" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <polygon points="0 0,8 3,0 6" fill="#ff6b6b"/>
+  </marker>
+  <marker id="ab" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <polygon points="0 0,8 3,0 6" fill="#6b9fff"/>
+  </marker>
+</defs><circle cx="260" cy="115" r="78" stroke="hsl(0,70%,55%)" stroke-width="1.5" fill="none" opacity="0.55"/><circle cx="260" cy="115" r="58.5" stroke="hsl(67,70%,55%)" stroke-width="1.5" fill="none" opacity="0.55"/><circle cx="260" cy="115" r="39" stroke="hsl(133,70%,55%)" stroke-width="1.5" fill="none" opacity="0.55"/><circle cx="260" cy="115" r="19.5" stroke="hsl(200,70%,55%)" stroke-width="1.5" fill="none" opacity="0.55"/><path d="M 260 19 A 96 96 0 0 1 356 115" stroke="#ff6b6b" stroke-width="2" fill="none" marker-end="url(#ar)"/><text x="190" y="15" font-size="12" fill="#ff8888">低域 &lt; 2500Hz</text><text x="190" y="29" font-size="11" fill="#aa5555">＋ 正方向に寄与</text><path d="M 260 211 A 96 96 0 0 1 164 115" stroke="#6b9fff" stroke-width="2" fill="none" marker-end="url(#ab)"/><text x="280" y="217" font-size="12" fill="#8888ff">高域 ≥ 2500Hz</text><text x="280" y="231" font-size="11" fill="#5555aa">－ 逆方向に寄与</text><text x="260" y="232" text-anchor="middle" font-size="10" fill="#555">帯域バランスで回転方向・速度がリアルタイムに変化</text></svg>
